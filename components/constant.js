@@ -1,0 +1,1 @@
+export const API="https://newsapi.org/v2/top-headlines?country=us&apiKey=c9a96228c3574e88ade6dd47b0ccd54f"
