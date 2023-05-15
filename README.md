@@ -40,5 +40,6 @@ Dependencies
 Project Description
 
 Installation
+--------------
 Clone the project repository to your computer. Navigate to the project directory in the terminal and run the command npm install to install the necessary dependencies. If you have Expo CLI installed, use the command expo start to launch the application. Otherwise, install Expo CLI beforehand and then run the command expo start.
 
