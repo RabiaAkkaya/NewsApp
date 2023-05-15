@@ -7,16 +7,14 @@ Screens
 ---------------------------
 Sign In and Sign Up screens
 -------------------------
+![image](https://github.com/RabiaAkkaya/NewsApp/assets/120411042/f0b4fa1d-5778-49a2-a9d8-eb37fce2964c)
 
-![WhatsApp Image 2023-05-15 at 10](https://github.com/RabiaAkkaya/NewsApp/assets/120411042/0760e714-4c71-4f68-b8fc-42d8bb569c87)
-![WhatsApp Image 2023-05-15 at 10  (1)](https://github.com/RabiaAkkaya/NewsApp/assets/120411042/c73f59b4-7c9a-4f38-b9df-0ec3910f92a4)
-
+![image1](https://github.com/RabiaAkkaya/NewsApp/assets/120411042/9906034c-02ca-4d9b-a7ba-13fcecdf3634)
 
 News Screen
 ----------------
-![WhatsApp Image 2023-05-15 at 10  (2)](https://github.com/RabiaAkkaya/NewsApp/assets/120411042/094518fe-4244-481e-8521-ef8191c7b8e4)
 
-
+![image2](https://github.com/RabiaAkkaya/NewsApp/assets/120411042/238ec167-5c2c-4b3e-bfc6-1e1ce0a3878b)
 
 
 Dependencies
