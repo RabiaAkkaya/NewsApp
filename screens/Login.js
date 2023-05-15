@@ -22,6 +22,7 @@ export default function Login({ navigation }) {
         await firebase.auth().signInWithEmailAndPassword(email, password);
         Alert.alert("Login Successful', 'You are now logged in.");
         await AsyncStorage.setItem('isLogin','1');
+        await AsyncStorage.setItem('user',email);
         navigation.navigate("News"); //Giriş başarılı ise News'a gönder
       }catch (error){
         console.log(error.message);

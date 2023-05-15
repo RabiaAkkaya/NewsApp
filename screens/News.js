@@ -3,13 +3,16 @@ import {View,StyleSheet,SafeAreaView,Text,ScrollView,TouchableOpacity ,Linking,B
 import NewsComponent from './NewsComponent';
 import { API } from './constant';
 import axios from "axios";
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
-export default class News extends Component{
+export default class News extends Component{ 
+    
     constructor()
     {
         super();
         this.state={
-        news:[]
+        news:[],
+        user:''
 
         }
     }
@@ -21,6 +24,9 @@ export default class News extends Component{
                 news:articles
            
             });
+            AsyncStorage.getItem('user').then(user => {
+                this.setState({ user });
+              });
            
         })
     .catch((error)=>
@@ -47,35 +53,48 @@ mapToData=()=>
     
 });
 }
+
     render(){//kullanımı zorunlu
-return(
-   <SafeAreaView>
-    <ScrollView>
-        
-<View style={{
-    height:60,
-    backgroundColor:"#0591c2",
-    justifyContent:"center"
+        return (
+            <SafeAreaView>
+              <ScrollView>
+                <View style={{
+                  height: 60,
+                  backgroundColor: "#0591c2",
+                  flexDirection: "row",
+                  alignItems: "center",
+                  paddingHorizontal: 25,
+                }}>
+                    <Text style={{
+    flex: 1,
+    color: '#fff',
+    fontSize: 25
+    
 }}>
-    <Text style={{
-        color:'#fff',
-        fontSize:18,
-        marginLeft:25
+    News
+</Text>
+<Text style={{
 
-    }}>News
-    </Text>
-   
-</View>
-{this.mapToData()}
-
+    color: '#fff',
+    fontSize: 12,
+    textAlign: 'right',
+    padding:5
+}}>
+    {this.state.user} 
+</Text>
 <Button
-         title = "Sign Out"
-         color = "red"
-         onPress={this.SignOut} 
-      />
-</ScrollView>
-   </SafeAreaView>
-)
+    title="Sign Out"
+    color="red"    
+    onPress={this.SignOut}
+
+/>
+
+                </View>
+                {this.mapToData()}
+              </ScrollView>
+            </SafeAreaView>
+          );
+          
 
     }
 }

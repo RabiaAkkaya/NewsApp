@@ -14,16 +14,20 @@ import {firebase} from '../config';
 export default function SignUp({ navigation }) {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [password2, setPassword2] = useState('');
+
 
   const signupUser = async () => {
     try{
-
+      if(password==password2){
         await firebase.auth().createUserWithEmailAndPassword(email, password);
-        Alert.alert("Login Success!.");
+        Alert.alert("Register Success!.");
         navigation.navigate("Login"); //hesap oluşturma başarılı ise Logine gönder
+      }
+      else
+      Alert.alert("passwords do not match");
       }catch (error){
-        console.log(error.message);
-        Alert.alert( `Error: ${error.message}`);
+                Alert.alert( `Error: ${error.message}`);
       }
   };
 
@@ -42,6 +46,13 @@ export default function SignUp({ navigation }) {
         value={password}
         onChangeText={setPassword}
         placeholder="Password"
+        secureTextEntry
+      />
+       <TextInput
+        style={styles.input}
+        value={password2}
+        onChangeText={setPassword2}
+        placeholder="Password Again"
         secureTextEntry
       />
       <Button title="Signup" onPress={signupUser} />
